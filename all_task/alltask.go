@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 TASK 1
 */
@@ -53,43 +51,43 @@ TASK 2
 /*
 TASK 3
 */
-func main() {
-	ch := make(chan int)
-	go numbers(ch)
-
-	for v := range ch {
-		fmt.Println(v)
-	}
-}
-
-func numbers(ch chan<- int) {
-	for i := 1; i <= 10; i++ {
-		ch <- i
-	}
-	close(ch)
-}
+//func main() {
+//	ch := make(chan int)
+//	go numbers(ch)
+//
+//	for v := range ch {
+//		fmt.Println(v)
+//	}
+//}
+//
+//func numbers(ch chan<- int) {
+//	for i := 1; i <= 10; i++ {
+//		ch <- i
+//	}
+//	close(ch)
+//}
 
 /*
- TASK 4
- Dengan buffered channel, function terasa lebih cepat
- karena ketika ketika function ingin melakukan sending data melalui channel,
- tidak perlu saling menunggu seperti pada unbuffered channel
+TASK 4
+Dengan buffered channel, function terasa lebih cepat
+karena ketika ketika function ingin melakukan sending data melalui channel,
+tidak perlu saling menunggu seperti pada unbuffered channel
 */
-// func main() {
-//     ch := make(chan int, 5)
-//     go numbers(ch)
-
-//     for v := range ch {
-//         fmt.Println(v)
-//     }
-// }
-
-// func numbers(ch chan<- int) {
-//     for i := 1; i <= 10; i++ {
-//         ch <- i
-//     }
-//     close(ch)
-// }
+//func main() {
+//	ch := make(chan int, 5)
+//	go numbers(ch)
+//
+//	for v := range ch {
+//		fmt.Println(v)
+//	}
+//}
+//
+//func numbers(ch chan<- int) {
+//	for i := 1; i <= 10; i++ {
+//		ch <- i
+//	}
+//	close(ch)
+//}
 
 /*
    TASK 5
